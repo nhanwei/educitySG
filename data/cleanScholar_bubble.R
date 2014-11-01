@@ -1,5 +1,5 @@
 library(stringr)
-setwd("/Users/thiakx/Documents/playground/educity/educity/data")
+setwd("/yourpath")
 scholar=read.csv("scholarRaw.csv")
 
 scholar=scholar[!scholar$Name.of.Scholar=="",]

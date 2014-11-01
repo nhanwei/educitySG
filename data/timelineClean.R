@@ -1,4 +1,4 @@
-setwd("/Users/thiakx/Documents/playground/educity/educity/data")
+setwd("/yourpath")
 #json
 library(jsonlite)
 timeLine=read.csv("TimelineData.csv")

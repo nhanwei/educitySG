@@ -1,5 +1,5 @@
 library(reshape2)
-setwd("/Users/thiakx/Documents/playground/educity/educity/data")
+setwd("/yourpath")
 dashData=read.csv("dashboardRaw.csv")
 
 #json

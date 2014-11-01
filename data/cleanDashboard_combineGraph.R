@@ -1,5 +1,5 @@
 library(reshape2)
-setwd("/Users/thiakx/Documents/playground/educity/educity/data")
+setwd("/yourpath")
 dashData=read.csv("dashboardRaw.csv")
 govtExpend=read.csv("govtExpend.csv")
 dashData=merge(dashData,govtExpend,by="Year",all.x=T)
