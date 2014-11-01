@@ -1,0 +1,297 @@
+
+    body{
+		color: #333;
+		font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	}
+	
+	h1{
+		font-size:54px;
+		color: #FFF;
+	}
+	h2{
+		font-size: 26px;
+		margin: 0 0 18px 0;
+		color: #000;
+	}
+	
+	h3{
+		font-size: 30px;
+		color: #000;
+	}
+	
+	h4{
+		font-size: 14px;
+		color: #000;
+	}
+	
+	h5{
+		font-size: 18px;
+		color: #000;
+	}
+	
+	#header{
+		position:fixed;
+		height: 28px;
+		display:block;
+		width: 100%;
+		background-color:rgba(25,25,25,1);
+		z-index:999;
+		color: #000;
+		font-size:26px;
+		top:0px;
+	}
+	
+	#menu{padding: 3px 3px 3px 20px;}
+	#menu p{font-size:14px; white-space: pre;}
+    #header a{color: #FFF;}
+	#header a:hover{color: #006d2c;text-decoration: none;}
+
+    .loader {
+        position: fixed;
+        left: 0px;
+        top: 0px;
+        width: 100%;
+        height: 100%;
+        z-index: 9999;
+        background: url('img/page-loader.gif') 50% 50% no-repeat rgb(249,249,249);
+    }
+
+	.box-reportCard{width: 50%; margin-left: 50%; padding:0px 50px 0px 10px}
+
+	.box-about{
+		font-size: 20px;
+		padding: 0px 5px 0px 5px;
+		background-color:rgba(255,255,255,0.1);
+	}
+
+	.section{
+		text-align:center;
+	}
+	
+    #myVideo{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    top:0;
+    right:0;
+    width: 100%;
+    height: 100%;
+    z-index: -99;
+    background-size: 100% 100%;
+    background-color: black; /* in case the video doesn't fit the whole page*/
+    background-position: center center;
+    background-size: contain;
+    object-fit: cover; /*cover video background */
+	}
+	
+	/*for parallels chart*/
+	.tooltip{z-index: 999;}
+	.dimension tspan.name { font-size: 14;}
+	
+	/* Defining each section background and styles
+	* --------------------------------------- */
+	#introPage{
+		background-color:rgba(0,0,0,0.4);
+		color: #000;
+		font-size: 24px; 
+	}
+
+	#reportCardPage .fp-controlArrow.fp-prev{border-color: transparent #008ac9 transparent transparent;}
+	#reportCardPage .fp-controlArrow.fp-next{border-color: transparent transparent transparent #008ac9;}
+	
+	#aboutPage .fp-controlArrow.fp-prev{border-color: transparent #008ac9 transparent transparent;}
+	#aboutPage .fp-controlArrow.fp-next{border-color: transparent transparent transparent #008ac9;}
+
+	#insightPage .fp-controlArrow.fp-prev{border-color: transparent #008ac9 transparent transparent;}
+	#insightPage .fp-controlArrow.fp-next{border-color: transparent transparent transparent #008ac9;}
+	
+	#scholarPage .fp-controlArrow.fp-prev{border-color: transparent #008ac9 transparent transparent;}
+	#scholarPage .fp-controlArrow.fp-next{border-color: transparent transparent transparent #008ac9;}
+	
+	#reportCardPage p {font-size: 22px;}
+	#reportCardPage .wrap {width: 100%;}
+	
+	#scholarPage p {font-size: 22px;}
+	#scholarPage .wrap {width: 100%;}
+	
+	#insightPage p {font-size: 22px;}
+	#insightPage .wrap {width: 80%;}
+	
+	#reportCardPage-slide1{
+        background-image: url(img/Sharifah2.jpg);
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+	}
+
+	#reportCardPage-slide2{
+        background-image: url(img/Sharifah-student.jpg);
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+	}
+	
+	#reportCardPage-slide3{
+        background-image: url(img/Sharifah-reportBk.jpg);
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+	}
+
+	#reportCardPage-slide4{
+        background-image: url(img/Sharifah-tertiary.jpg);
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+	}
+	
+	#reportCardPage-slide5{
+        background-image: url(img/Sharifah-kid.jpg);
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+	}
+	
+	#reportCardPage-slide6{
+        background-image: url(img/thinking.jpg);
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+	}
+	
+	
+
+	#aboutPage-slide1{
+        background-image: url(img/deming2.jpg);
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+	}
+	
+	#aboutPage-slide2{
+        background-image: url(img/joel2.jpg);
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+	}
+
+	#aboutPage-slide3{
+        background-image: url(img/kaixin2.jpg);
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+	}
+
+	#aboutPage-slide4{
+        background-image: url(img/michael2.jpg);
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+	}
+
+	#scholarPage-slide1{
+        background-image: url(img/scholar.jpg);
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+	}
+
+	#scholarPage-slide3{
+        background-image: url(img/STEMlogo.jpg);
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+	}
+	
+	#scholarPage-slide4{
+        background-image: url(img/PSC-Scholar.jpg);
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+	}
+	
+	
+	#scholarPage-slide7{
+        background-image: url(img/thinking.jpg);
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+	}
+	
+
+	#creditsPage{
+        background-image: url(img/thank-you-cat.jpg);
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+	}
+
+
+    /*Scholarship*/
+    .checkbox-container {float:left;font-size: 13px;margin-right:5px;}
+    
+    circle {
+        stroke: white;
+        stroke-width: 2px;
+        opacity: .8;
+      }
+      .btn-group {
+        margin-left: 0px;
+      }
+      .label {
+        font-size: 12px !important;
+        fill: #000;
+        
+        /* add white outline */
+        text-shadow:
+        -1px -1px 0 #FFF,
+        1px -1px 0 #FFF,
+        -1px 1px 0 #FFF,
+        1px 1px 0 #FFF; 
+      }
+      
+      .popover {font-size: 14px;}
+    
+  /*C3 Charts*/
+  
+  .c3-axis-y-label, .c3-axis-x .tick, .c3-axis-y .tick {
+  font-size:14px;
+    }
+
+    .c3-line {
+      stroke-width: 3px;
+    }
+    
+    /*for IE errors*/  
+    #sn-chartFrame{
+    }
+      
+    #sn-error {  
+    }
+    #sn-error p {
+      text-align: center;
+      font-size: 16px;
+      line-height: 20px;
+      margin: 10px;
+      border: solid 1px #CCC;
+      background: #ffd;
+      padding: 10px;
+    }
+    #sn-error a {
+      text-decoration: underline;
+    }

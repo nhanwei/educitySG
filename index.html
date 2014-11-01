@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Educity</title>
+    <link href="img/favicon.ico" rel="shortcut icon" >
+    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css" rel="stylesheet" />
+    <link href="http://fonts.googleapis.com/css?family=Inika&subset=latin,latin-ext" rel="stylesheet" type="text/css" />
+	<link href="js/fullpage/jquery.fullPage.css" rel="stylesheet" type="text/css"  />
+	<link href="js/fullpage/educityFullPage.css" rel="stylesheet" type="text/css"  />
+	<link href="http://cdnjs.cloudflare.com/ajax/libs/c3/0.3.0/c3.css" rel="stylesheet" type="text/css">
+	<link href="js/d3-parsets/d3.parsets.css" rel="stylesheet" type="text/css"  />
+	
+	<!--educity customize-->
+	<link href="educity.css" rel="stylesheet" type="text/css">
+    <link href="js/bootstrap.min.educity.css" rel="stylesheet" /> <!--edited to rename tooltip so parallels chart works-->
+	<script type="text/javascript" src="js/TimelineJS/build/js/storyjs-embed.js"></script> <!-- changed erro message and increase timeout count to 80 --> 
+
+	<!-- HTML5 shim, for IE6-8 support of HTML elements--><!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="js/fullpage/jquery.fullPage.js"></script>
+	<script type="text/javascript" src="js/jquery.slimscroll.min.js"></script>
+	
+	<!--<script type="text/javascript" src="http://cdn.knightlab.com/libs/timeline/latest/js/storyjs-embed.js"></script>-->
+	
+	<script type="text/javascript">
+     
+	    //loading screen
+        $(window).load(function() {
+            $(".loader").fadeOut("slow");
+        })
+
+        //create the menu
+		$(document).ready(function() {
+			$('#fullpage').fullpage({
+				anchors: ['introPage-Link', 'yearbookPage-Link', 'reportCardPage-Link','scholarPage-Link','contributePage-Link','aboutPage-Link','creditsPage-Link'],
+				//sectionsColor: ['#4A6FB1', '#000000', '#323539', '#939FAA'],
+				menu: '#menu',
+				scrollOverflow: false,
+				autoScrolling:true,
+				loopHorizontal:false,
+				afterRender: function(){
+            		//playing the video
+					$('video').get(0).play();
+					$('video').get(1).play();
+				}
+			});
+		});
+		
+		//reload again to make sure timeline got time to work
+        window.onload=function() {
+          if (location.href.indexOf('loaded')==-1) location.replace(location.href+'?loaded');
+        }
+		
+	</script>
+
+	<!-- for IE errors -->
+	<script>
+    var ieError = false;
+    </script>
+
+</head>
+<body>
+<div class="loader"></div>
+<div id="header">
+<div id="menu">
+	<p style="font-weight:bold;"><a  href="#introPage-Link"><img src="img/educity_colorBlock.png" height='20'/></a>      <a  href="#yearbookPage-Link">Singapore's EduStory</a>     <a  href="#reportCardPage-Link">Sharifah's EduStory</a>     <a  href="#scholarPage-Link">PSC Scholarship</a>     <a  href="#contributePage-Link">Contribute to SG's EduStory!</a>     <a  href="#aboutPage-Link">About</a>      <a  href="#creditsPage-Link">Credits</a></p>
+</div>
+</div>
+
+<div id="fullpage">
+	<div class="section " id="introPage">
+            <div class="intro">
+                <img src="img/educity_colorBlock.png"/><br>
+                 <p style="color: #FFF;font-size:30px; font-weight:bold;">The Singapore Education Story</p>
+                <video autoplay loop muted id="myVideo">
+                <source src="img/students2.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
+
+	<div class="section" id="yearbookPage">
+		<!-- yearbook -->
+          <div id="timeline-embed"></div>
+          
+    </div>
+	
+	<!-- reportCards --> 
+	<div class="section" id="reportCardPage">
+        <div class="slide" id="reportCardPage-slide1">
+                <div class="box-reportCard" style="color:#FFF; background-color:rgba(255,255,255,0.5);">
+                    <h3 style="color:#008ac9; text-shadow: -1px -1px 0 #FFF, 1px -1px 0 #FFF, -1px 1px 0 #FFF,1px 1px 0 #FFF;">Hi, I am Sharifah (the one with mouth open)</h3>
+                    <p style="color:#008ac9; text-shadow: -1px -1px 0 #FFF, 1px -1px 0 #FFF, -1px 1px 0 #FFF,1px 1px 0 #FFF;">Borned in 1940s, this is my EduStory</p>
+                    <p style="font-size:14px;color:#000;">*Sharifah is the personification of Singapore's pioneer generation based on our conversations with family and friends.</p>
+                </div>
+            </div>
+            
+    <div class="slide" id="reportCardPage-slide2">
+		<div class="box-reportCard">
+			    <h3>What were classrooms like in the good old days?</h3>
+                <div class="wrap"><div id="chart6"></div></div>
+                <p>Well, I had no modern luxury of iPads, laptops, smartphones to aid/distract my studies. On the other hand, I might had gotten away with more than my fair share of mischief as <a target="_blank" href="http://data.gov.sg/Metadata/SGMatadata.aspx?id=0301050000000005757K&mid=133864&t=TEXTUAL" > each teacher had to take care of many </a> <a target="_blank" href="http://data.gov.sg/Metadata/SGMatadata.aspx?id=0301060000000005758L&mid=105031&t=TEXTUAL " >more students. </a></p><h4> Mouse over the graph for more details.  [Note: These are not number of students in each classroom but a simple division of number of students by number of teachers]. </h4>
+         </div>
+    </div> 	
+     
+     	<div class="slide" id="reportCardPage-slide3">
+			<div class="box-reportCard">
+			<h3>Despite doing reasonably well in school, I faced much difficulties in advancing my education</h3>
+               <div class="wrap"><div id="chart3"></div></div>
+               <p>With many mouths to feed, my family had troubles supporting my post secondary education. In fact, in the early 1990s, <a target="_blank" href="http://data.gov.sg/Metadata/SGMatadata.aspx?id=0301070000000005759M&mid=105032&t=TEXTUAL " >less than 50% of my friends had attended post secondary eduction</a>. But I was determined to further my studies. </p>
+            </div>
+        </div>
+        
+        <div class="slide" id="reportCardPage-slide4">
+			<div class="box-reportCard">
+			<h3>I finally made it into university, become one of the first among my friends to receive tertiary education</h3>
+               <div class="wrap"><div id="chart4"></div></div>
+               <p>This was the 1990s and I was lucky as <a target="_blank" href="http://data.gov.sg/Metadata/SGMatadata.aspx?id=0301150000000010019I&mid=133870&t=TEXTUAL">it seemed like many families then preferred to support their sons for tertiary education. </a> The good news is, the gender gap had closed over the years and even reversed in trend in 2007, where there were more female students than male tertiary students. </p>
+            </div>
+        </div>
+        
+        <div class="slide" id="reportCardPage-slide5">
+			<div class="box-reportCard">
+			<h3>More funding. More competitive.</h3>
+               <div class="wrap"><div id="chart1"></div></div>
+               <p><a target="_blank" href="http://data.gov.sg/Metadata/SGMatadata.aspx?id=0302010000000005762P&mid=105034&t=TEXTUAL">Singapore's government has invested heavily in education over the years</a>. Although my children may have more opportunities for education than I ever had,<a target="_blank" href="http://www.straitstimes.com/news/opinion/eye-the-economy/story/graduate-employment-degrees-relevance-20141023#xtor=CS1-10"> a university degree is no longer the golden ticket to job security and career success. </a> My children will need to work as hard as me to build their own EduStory.</p><h4>[Figures in chart adjusted for inflation to 2012 dollar value using CPI]</h4>
+            </div>
+        </div>
+     
+  	    <div class="slide" id="reportCardPage-slide6">
+            <div class="box-reportCard">
+                    <h3>Increase in government expenditure, smaller classes, better gender-racial parity</h3>
+                    <div class="wrap" ><div id="chart0"></div></div>
+                    <h4>As a summary, we benchmarked all the education metrics against their respective 2003 values and grouped them based on their relative increase (green) / decrease (red) / no trend (blue) over the years. Mouse over for more details.</h4>
+                    <p>Does increase government funding result in better education quality? Or does other societal and economical factors play a bigger role? Many aspects of education cannot be easily quantified.</p>
+            </div>
+	    </div>
+  
+  
+	</div>
+	
+	<!--[if lt IE 9]>
+      <div id="sn-error">
+      <p>This interactive graphic requires a browser with SVG support, such as <a target="_blank" href="http://www.google.com/chrome">Chrome</a>, <a target="_blank" href="http://www.mozilla.org/en-US/firefox/">Firefox</a>, <a target="_blank" href="http://www.apple.com/safari/download/">Safari</a> or <a target="_blank" href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home">Internet Explorer 9 and above</a>. </p>
+      <img src="img/staticScholar.png" width='1000' height='560'>
+       <script>
+            ieError = true;
+      </script>
+      <div id="sn-chartFrame" style="display:none;">
+    <![endif]-->
+  
+  <!--will be hidden if less than IE9-->	
+	
+	<!-- Scholarship -->
+	<div class="section" id="scholarPage">
+        <div class="slide" id="scholarPage-slide1">
+                <div class="box-reportCard" style="background-color:rgba(255,255,255,0.1);">
+                    <h3>The Public Service Commission (PSC) Scholarship</h3>
+                    <p>Created in 1961, PSC has been a source of talent pool for key leaders in the Singapore Government. Here, we delve deeper into <a target="_blank" href="http://data.gov.sg/common/search.aspx?q=psc&s=default&cs=1&page=1" > the numbers behind the scholarship system.</a></p>
+                </div>
+            </div>
+            
+    <div class="slide" id="scholarPage-slide2">
+	        <br><br>
+             <div class="wrap"><p> Here, every scholar from 2002 to 2013 is represented by a bubble. Feel free to group them by clicking the buttons below.</p><p style="font-size:11px;">*257 scholars had no gender data, so we tagged half of them as males, the other half as females.</div></p>
+            <div class="btn-group" data-toggle="buttons" style="padding-left:0%;">
+      
+              <label class="btn btn-primary active" id="type">
+                <input type="radio" name="options"> All
+              </label>
+      
+              <label class="btn btn-primary" id="school">
+                <input type="radio" name="options"> School
+              </label>
+              
+            <label class="btn btn-primary" id="Gender">
+                <input type="radio" name="options"> Gender
+              </label>
+      
+              <label class="btn btn-primary" id="Course">
+                <input type="radio" name="options"> Course
+              </label>         
+              
+            <label class="btn btn-primary" id="ScholarshipAwarded">
+                <input type="radio" name="options"> Scholarship
+              </label>           
+    
+             </div>
+             
+             <div style="margin-left: 30%"><div id="filterContainer" class="filterContainer checkbox-interaction-group"></div></div>
+             
+              <!--[if lt IE 9]></div><![endif]--> 
+              <div id="scholarChart"></div>
+        </div>
+        
+        
+        <div class="slide" id="scholarPage-slide3">
+            <div class="box-reportCard">
+                    <h3>Decline in proportion of STEM scholars</h3>
+                    <div class="wrap"><div id="insight2"></div></div>
+                    <p>It seemed that the proportion of Science, Technology, Engineering, Math (STEM) scholars has decreased over the years; they seemingly are replaced by humanities scholars. With the growing importance of technology, will we see an resurgence of STEM scholars? Or do brilliant young STEMsters prefer to join large, famous technology MNCs?</p>
+            </div>
+	    </div>	 
+        
+            
+        <div class="slide" id="scholarPage-slide4">
+            <div class="box-reportCard">
+                    <h3>Number of scholars per year dipped to a low point in 2005 but has been increasing since</h3>
+                    <div class="wrap"><div id="insight1"></div></div>
+                    <p>The trend is very interesting as there seemed to be no clear indication what caused the low point in scholarship numbers in 2005 and its subsequent rise. Perhaps it depended on the demand of talents in the public office.</p>
+            </div>
+	    </div>
+
+        
+        <div class="slide" id="scholarPage-slide5">
+            <br><br>
+                 <div class="wrap" style="width:60%"><p>The scholars' Paths: In the next segment, we will explore the various pathways that scholars can take. Starting from the top, we have the various types of scholarships, which connects to courses the scholars can study and finally, which organization the scholars ends up working at. <br>Simply mouse over the particular path for more details. The demo below also showcase how you can sort and re-oder the pathways.</p>
+                 <video autoplay loop muted><source src="img/parallelsDemo.mp4" type="video/mp4"></video>
+                 </div>
+        </div>
+        
+              <div class="slide" id="scholarPage-slide6">
+            <br><br><p>Scholars' Paths</p>
+                 <div class="wrap"><div id="parallelViz"></div></div>
+        
+        </div>
+        
+         <div class="slide" id="scholarPage-slide7">
+            <div class="box-reportCard">
+                    <h3>Decline in proportion of engineering scholars</h3>
+                     <div class="wrap"><div id="insight3"></div></div>
+                    <h4>By breaking up the scholar's education mix, we can see that fewer and fewer scholars chose to study engineering (blue), instead, more and more are opting for economics (orange), humanities (green) and law (red). </h4><br>
+                    <p>Ultimately, is this a worrying trend? Or does the degree not matter since most scholars will be involved in planning and policy work? Perhaps only time will tell but it <a target="_blank" href="http://www.channelnewsasia.com/news/singapore/more-than-400-psc/1404292.html"> does seem like Singapore government is interested to increase the number of STEM scholars.</a></p>
+            </div>
+	    </div>
+        
+    </div>
+    
+    <!--load educity's graphs-->
+	<script type="text/javascript" src="d3-c3-graph.js"></script>
+    
+    <!-- contribute story -->
+	<div class="section" id="contributePage">
+		<iframe width="100%" height="100%" frameborder="0" src="https://thiakx.typeform.com/to/yG5WIw"></iframe>
+		<script type="text/javascript" src="https://s3-eu-west-1.amazonaws.com/share.typeform.com/embed.js"></script>
+    </div>
+         		
+	<!-- About us -->
+	<div class="section" id="aboutPage">
+	    <div class="slide" id="aboutPage-slide1">
+                <div class="wrap">
+	                <div class="box-about" style="margin-left: 50%;"> 
+                        De Ming is a Project Manager at Inland Revenue Authority of Singapore. Always looking to explore new, interesting stuff, he jio-ed(ask) his university kaki(friends) to take part in this challenge. He is a homely person who prefers to play games or disturb his cute nephews.
+                    </div>
+                </div>
+		</div>
+
+	    <div class="slide" id="aboutPage-slide2">
+	        <div class="wrap">
+                 <div class="box-about" style="margin-right: 50%;">
+                Joel is working at the Infocomm Development Authority of Singapore. He has an interest in a wide variety of IT topics, such as data analytics, security and cloud computing. Outside of work, he likes to travel and do outdoor activities such as hiking and skiing.
+                </div>
+            </div>
+    </div>
+
+        <div class="slide" id="aboutPage-slide3">
+            <div class="wrap">
+	            <div class="box-about" style="margin-right: 50%;">        
+                Kai Xin is a Data Padawan from Khoo Teck Puat Hospital's Healthcare Analytics Unit. He is also the cofounder of the Data Science SG Meetup and DataKind SG. Besides data science, Kai Xin is a curious traveler who likes to explore the world.
+                </div>
+            </div>
+    </div>	
+        
+	    <div class="slide" id="aboutPage-slide4">
+	        <div class="wrap">
+	             <div class="box-about" style="margin-left: 50%;">     
+                Michael works at ST Electronics, working with real time/near real time analytics and has developed proof-of-concepts to maximize the use of data in answering common key problems. An avid football fan, he used to play a match every week but has since stopped due to injuries.
+                </div>
+            </div>
+    </div>	
+	
+    </div>
+        
+        
+<!--Credits-->
+    <div class="section" id="creditsPage">
+	        <div style="width:35%; margin-left:5%;font-size:16px;"> 
+	        <br><br>    
+                <p style="color:#FFF; font-size:12px">If you think that the copyright of the media sources belong to you and you require us to remove or credit it, please email us at deming.wong@gmail.com.</p>
+					<a target="_blank" href="http://data.gov.sg/common/search.aspx?q=psc&s=default&cs=1&page=1">List of 2002-2009 President's scholars, List of 2002-2009 PSC scholars</a>
+                <br><a target="_blank" href="http://data.gov.sg/Metadata/SGMatadata.aspx?id=0302010000000005762P&mid=105034&t=TEXTUAL ">Government Expenditure</a>
+                <br><a target="_blank" href="http://www.moe.gov.sg/education/education-statistics-digest/ ">Enrollment of Students</a>
+                <br><a target="_blank" href="http://data.gov.sg/Metadata/SGMatadata.aspx?id=0301070000000005759M&mid=105032&t=TEXTUAL ">Students with post secondary education by race</a>
+                <br><a target="_blank" href="http://data.gov.sg/Metadata/SGMatadata.aspx?id=0301150000000010019I&mid=133870&t=TEXTUAL ">Ratio of females to male students</a>
+                <br><a target="_blank" href="http://www.moe.gov.sg/education/education-statistics-digest/ ">Number of primary & secondary schools</a>
+                <br><a target="_blank" href="http://data.gov.sg/Metadata/SGMatadata.aspx?id=0301050000000005757K&mid=133864&t=TEXTUAL 
+http://data.gov.sg/Metadata/SGMatadata.aspx?id=0301060000000005758L&mid=105031&t=TEXTUAL 
+">Student to teacher ratio</a>
+                <br><a target="_blank" href="http://www.singstat.gov.sg/statistics/browse_by_theme/economy/time_series/cpi_1980.xls">CPI</a>                                                  
+                <br><a target="_blank" href="https://www.youtube.com/watch?v=sEn6OKsVoMs">Intro Video Source</a>
+                <br><a target="_blank" href="http://upload.wikimedia.org/wikipedia/commons/c/c1/Three_Muslim_girls_in_tudungs_-_20100718.jpg">Sharifah</a>
+                <br><a target="_blank" href="http://www.todayonline.com/sites/default/files/styles/photo_gallery_image_lightbox/public/19140591.JPG?itok=mgZZkmZR">Students</a>
+                <br><a target="_blank" href="http://onthesannyside.blogspot.sg/2012/09/found-my-school-report-books.html">Sharifah's report book</a>
+                <br><a target="_blank" href="http://i.huffpost.com/gen/1159969/thumbs/o-MUSLIM-STUDENTS-facebook.jpg">Sharifah in University</a>
+                <br><a target="_blank" href="http://www.wafagal.com/2010/09/ramadan.html">Sharifah's children</a>
+                <br><a target="_blank" href="http://sk.aphelis.net/post/117942890/andre-martins-debarros-the-art-scholar-scholars">PSC Scholar Books</a>
+                <br><a target="_blank" href="http://news.asiaone.com/news/edvantage/psc-scholarships-awarded-merit-no-quota-number-awarded">PSC scholars</a>
+                <br><a target="_blank" href="https://www.goldenviewclassical.org/wp-content/uploads/2014/09/STEMlogo.jpeg">STEM</a>
+                <br><a target="_blank" href="https://yt3.ggpht.com/-DZn0VQf-Yf8/AAAAAAAAAAI/AAAAAAAAAAA/syBeQANV_xU/s900-c-k-no/photo.jpg">Dog1</a>
+                <br><a target="_blank" href="http://fflg108-foodforlifegloba.netdna-ssl.com/wp-content/uploads/2014/01/whos_awesome.jpg">Dog2</a>
+                <br><a target="_blank" href="http://www.wallpapersdb.org/original/5043/">Cat Praying</a>
+            </div>   
+    </div>	  
+
+</div>
+
+</body>
+</html>
