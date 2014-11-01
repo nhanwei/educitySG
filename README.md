@@ -1,7 +1,7 @@
 educitySG
 =========
 
-The Singapore Education Story - 2nd place winning entry for the "Data in the City"Data Visualisation Challenge
+The Singapore Education Story - 2nd place winning entry for Singapore's "Data in the City" Data Visualisation Challenge.
 
 Visit: http://educity.sg/
 
