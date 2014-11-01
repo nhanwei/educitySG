@@ -4,9 +4,6 @@ scholar=read.csv("scholarRaw.csv")
 
 scholar=scholar[!scholar$Name.of.Scholar=="",]
 
-scholar$Name.of.Scholar=gsub("*","",scholar$Name.of.Scholar) #remove * in name
-scholar$Name.of.Scholar=gsub(",","",scholar$Name.of.Scholar) #remove , in name
-scholar$Name.of.Scholar=str_trim(scholar$Name.of.Scholar) #fix extra spaces before and after name
 scholar$Scholarship.Awarded=str_trim(scholar$Scholarship.Awarded) #fix extra spaces before and after name
 scholar$Scholarship.Awarded=gsub(" \\)","\\)",scholar$Scholarship.Awarded) #remove space) in name
 
